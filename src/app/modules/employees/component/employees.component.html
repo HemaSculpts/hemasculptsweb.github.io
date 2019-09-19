@@ -1,0 +1,222 @@
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Hema Sculpts
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="compact-gallery.css">
+    <link rel="stylesheet" href="horizontal.css">
+    <!-- Optional seperate css files -->
+    <!-- <link rel="stylesheet" href="hero-img.css"> -->
+    <!-- <link rel="stylesheet" href="cards-gallery.css">
+    <link rel="stylesheet" href="grid-gallery.css"> -->
+
+
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark sticky-top">
+        <!-- Brand -->
+        <a class="navbar-brand nav-link" href="#top">
+            Hema Sculpts <i class="fa fa-paint-brush" aria-hidden="true"></i>
+        </a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#south-gallery">South Bridal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#north-gallery">North Bridal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#fashion-gallery">Fashion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#upload">Upload</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cover image  -->
+
+     <div class="hero-image">
+        <img class="img-fluid" width="100%" src="HemaCover.jpg" alt="Photographer">
+        <div class="hero-text">
+            <p>For Makeup Appointments</p>
+                <a href="https://www.instagram.com/hema_sculpts/" target="_blank">
+                    <i class="fa fa-instagram" style="font-size:30px;color:deeppink;" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.facebook.com/hemascultps/" target="_blank">
+                    <i class="fa fa-facebook-square" style="font-size:30px;" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:hemasculpts@gmail.com?Subject=Makeup%Appointments" target="_top">
+                    <i class="fa fa-envelope" style="font-size:30px;color:white;" aria-hidden="true"></i>
+                </a>
+                
+        </div>
+    </div>
+
+    <!-- South Gallery -->
+    <a name="south-gallery"></a>
+    <section class="gallery-block compact-gallery">
+        <div class="container">
+            <div class="heading">
+                <h2>
+                    South Bridal
+                </h2>
+                <!-- <hr class="hr">-->
+            </div>
+            <div id="south" class="row no-gutters">
+                <div *ngFor="let i of filterBySouth" class="{{zoom}}">
+                        <div *ngIf=isAdmin><input type="text" [(ngModel)]="i.value" [disabled]="!i.isEditable"/>
+                        <button (click)="i.isEditable=!i.isEditable" *ngIf="!i.isEditable">Edit</button>
+                        <button *ngIf="i.isEditable" (click)="i.isEditable=!i.isEditable;save(i);">Save</button>
+                    </div>
+                    <a class='lightbox' href={{i.name+fileType}}>
+                      <img class='img-fluid image' src={{i.name+fileType}}>
+                      <span class='description'>
+                          <span class='description-heading'>Spread Love</span>
+                          <span class='description-body'>{{i.value}}</span>
+                      </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </section>
+
+    <!-- North Gallery -->
+    <a name="north-gallery"></a>
+    <section class="gallery-block compact-gallery">
+        <div class="container">
+            <div class="heading">
+                <h2>
+                    North Bridal
+                </h2>
+                <!-- <hr class="hr"> -->
+            </div>
+            <div id="north" class="row no-gutters">
+                <div *ngFor="let i of filterByNorth" class='col-md-6 col-lg-4 item zoom-on-hover'>
+                    <a class='lightbox' href={{i.name+fileType}}>
+                      <img class='img-fluid image' src={{i.name+fileType}}>
+                      <span class='description'>
+                          <span class='description-heading'>Spread Love</span>
+                          <span class='description-body'>{{i.value}}</span>
+                      </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Fashion -->
+    <a name="fashion-gallery"></a>
+    <section class="gallery-block compact-gallery">
+        <div class="container">
+            <div class="heading">
+                <h2>
+                    Fashion
+                </h2>
+                <!-- <hr class="hr"> -->
+            </div>
+            <div id="fashion" class="row no-gutters">
+                <div *ngFor="let i of filterByFashion" class='col-md-6 col-lg-4 item zoom-on-hover'>
+                    <a class='lightbox' href={{i.name+fileType}}>
+                      <img class='img-fluid image' src={{i.name+fileType}}>
+                      <span class='description'>
+                          <span class='description-heading'>Spread Love</span>
+                          <span class='description-body'>{{i.value}}</span>
+                      </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact/email form submission  -->
+    <a name="contact"></a>
+    <section class="contact-from pt-4">
+        <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 mx-auto text-center">
+                                <h2>Contact us?</h2>
+                                <div class="divider bg-primary mx-auto"></div>
+                                <p class="text-muted lead">
+                                   We are looking forward to hear something from you!
+                                </p>
+                                 <a href="https://www.instagram.com/hema_sculpts/" target="_blank">
+                                    <i class="fa fa-instagram" style="font-size:35px;color:deeppink;" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://www.facebook.com/hemascultps/" target="_blank">
+                                    <i class="fa fa-facebook-square" style="font-size:35px;" aria-hidden="true"></i>
+                                </a>
+                                <a href="mailto:hemasculpts@gmail.com?Subject=Makeup%Appointments" target="_top">
+                                    <i class="fa fa-envelope" style="font-size:35px;color:lightslategray;" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-8 mx-auto">
+                            </div>
+                        </div>
+                    </div>
+                    </section>
+         
+
+          <!-- Upload Section -->
+          <a name="upload"></a>
+          <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center">
+                <h2>Upload image ?</h2>
+                    <input name="section" type="text">
+                    <input type="file">Upload
+                </div>
+
+            </div>
+          </div>
+   
+
+<!-- ABOUT ME SECTION -->
+    <div class="about-page">
+        <h2>About my Photography Journey</h2>
+        <p id="about-me">    </div>
+
+    <footer>
+         Hema Sculpts Makeup
+        <a href="#top">Go to top</a>
+    </footer>
+
+
+    <!-- BS4 JQUERY AND POPPER.js CDN's -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+
+    <!-- local script file  -->
+    <script src="generateElement.js"></script>
+    <script>
+        $(document).ready(function(){
+            baguetteBox.run('.compact-gallery', { animation: 'slideIn' });
+        });
+        
+    </script>
