@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: '../app/app.component.html',
-  styleUrls: ['../src/app/app.component.css']
+  styleUrls: ['./src/app/app.component.css']
 })
 export class AppComponent {
   title = 'my-dream-app';
