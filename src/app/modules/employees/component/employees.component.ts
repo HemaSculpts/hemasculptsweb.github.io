@@ -15,6 +15,7 @@ export class EmployeesComponent implements OnInit {
   private employees:Employee[];
   private span:Span[];
   private fileType:String;
+  private filePath:String;
   private isAdmin:Boolean;
   private zoom:String;
   
@@ -23,7 +24,8 @@ export class EmployeesComponent implements OnInit {
   
   ngOnInit() {
     console.log("calling service"); 
-    this.fileType=".jpg";   
+    this.fileType=".jpg";
+    this.filePath="/assets/images/"   
    /*this.employeeService.getEmployeeService((employees)=>{
      console.log(employees);
      this.employees=employees});*/
