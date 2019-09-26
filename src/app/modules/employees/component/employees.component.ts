@@ -79,21 +79,21 @@ export class EmployeesComponent implements OnInit {
    get filterBySouth() {
      if(this.span!=undefined)
      {
-      return this.span.filter( x => x.name.includes('SOUTH'));
+      return this.span.filter( x => x.name.includes('South'));
      }
   }
 
   get filterByNorth() {
     if(this.span!=undefined)
     {
-     return this.span.filter( x => x.name.includes('NORTH'));
+     return this.span.filter( x => x.name.includes('North'));
     }
  }
 
  get filterByFashion() {
   if(this.span!=undefined)
   {
-   return this.span.filter( x => x.name.includes('FASHION'));
+   return this.span.filter( x => x.name.includes('Fashion'));
   }
 }
  
