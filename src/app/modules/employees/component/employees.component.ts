@@ -68,8 +68,13 @@ export class EmployeesComponent implements OnInit {
     });
    }*/
 
-   save(value){
+   /*save(value){
     this.employeeService.postSpanEmployeeService((value)=>{
+      
+     },value);
+   }*/
+   save(value){
+    this.employeeService.putSpanEmployeeService((value)=>{
       
      },value);
    }
