@@ -31,7 +31,7 @@ public postSpanEmployeeService(callback,span){
   console.log(span);
   //var body = "name=" + span.name + "&value=" + span.value;
   //console.log(body);
-  this.http.post("https://hemasculpts.herokuapp.com/api/postdata", span).subscribe((data) => {callback(data)});
+  this.http.post("https://hemasculpts.herokuapp.com/api/postdbdata", span).subscribe((data) => {callback(data)});
 }
 
 public putSpanEmployeeService(callback,span){
@@ -42,7 +42,7 @@ public putSpanEmployeeService(callback,span){
  obj.table.push(span);
   //var body = "name=" + span.name + "&value=" + span.value;
   //console.log(body);
-  this.http.post("https://hemasculpts.herokuapp.com/api/postdbdata", obj).subscribe((data) => {callback(data)});
+  this.http.post("https://hemasculpts.herokuapp.com/api/postdbdata", span).subscribe((data) => {callback(data)});
 }
 
 postAPIData(data){
