@@ -74,7 +74,7 @@ export class EmployeesComponent implements OnInit {
      },value);
    }*/
    save(value){
-    this.employeeService.putSpanEmployeeService((value)=>{
+    this.employeeService.postSpanEmployeeService((value)=>{
       
      },value);
    }
