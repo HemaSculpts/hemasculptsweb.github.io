@@ -19,7 +19,7 @@ export class EmployeesService {
 }
 
 public getSpanEmployeeService(callback){
-  this.http.get('https://hemasculpts.herokuapp.com/api/getdata')
+  this.http.get('https://hemasculpts.herokuapp.com/api/getdbdata')
   .subscribe(
       (data) => {     
           callback(data);
@@ -42,7 +42,7 @@ public putSpanEmployeeService(callback,span){
  obj.table.push(span);
   //var body = "name=" + span.name + "&value=" + span.value;
   //console.log(body);
-  this.http.put("https://hemasculpts.herokuapp.com/api/putdata", obj).subscribe((data) => {callback(data)});
+  this.http.put("https://hemasculpts.herokuapp.com/api/postdbdata", obj).subscribe((data) => {callback(data)});
 }
 
 postAPIData(data){
